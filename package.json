@@ -1,0 +1,12 @@
+{
+  "name": "angular-pd-app",
+  "description": "A new project by platdesign.de",
+  "version": "0.0.0",
+  "dependencies": {},
+  "repository": "",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "pd-gulp-js-task": "git://github.com/platdesign/pd-gulp-js-task",
+    "pd-gulp-sass-task": "git://github.com/platdesign/pd-gulp-sass-task"
+  }
+}

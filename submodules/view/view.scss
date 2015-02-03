@@ -1,0 +1,66 @@
+.pd-view {
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	//max-width: 100%;
+	min-width: 250px;
+
+	&[split] {
+		display: flex;
+
+		$borderColor: #aaa;
+
+		&[split="cols"] {
+			> .pd-view {
+				&:not(:last-child) {
+					//border-right: 1px solid $borderColor;
+				}
+			}
+		}
+
+		&[split="rows"] {
+			flex-direction: column;
+
+			> .pd-view {
+				&:not(:last-child) {
+					//border-bottom: 1px solid $borderColor;
+				}
+			}
+		}
+
+		> .pd-view {
+			position: relative;
+			flex: 0 0 auto;
+
+			&[stretch] {
+				flex: 1 1 auto;
+			}
+		}
+
+	}
+
+
+
+	& + .pd-view-resize-handler {
+		cursor: ew-resize;
+		position: relative;
+		width: 0;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			transform: translateX(-50%);
+			bottom: 0;
+			width: 13px;
+			background: transparent;
+			z-index: 9999;
+		}
+	}
+}
